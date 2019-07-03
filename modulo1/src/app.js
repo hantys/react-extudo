@@ -1,15 +1,23 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
 import Title from './title'
+import Square from './square'
 
-const App = React.createClass({
-  render: function () {
+class App extends Component {
+  render() {
     return (
       <div className='container'>
-        <Title />
+        <Title name='Pedro' lastname='Fausto'  />
+        <hr />
+        {
+          ['blue', 'green', 'black', 'yellow', 'red'].map((color) => (
+            <Square color={color} key={color}/>
+          ))
+        }
       </div>
     )
   }
-})
+}
+
 export default App
